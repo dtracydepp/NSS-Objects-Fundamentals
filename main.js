@@ -57,12 +57,24 @@ const tenAlbum = {
 
 // Dot vs. Bracket Notation - accessing properties
 // TODO: USING DOT NOTATION, access the object properties (artist, title, released) and log the following message to the console using string interpolation: "Pearl Jam's Album Ten was released on 8/27/1991"
+console.log(`${tenAlbum.artist}'s Album ${tenAlbum.title} was released on ${tenAlbum.released}`)
 
-// TODO: Output the same messge to the console using BRACKET NOTATION
+
+// TODO: Output the same messge to the console using BRACKET NOTATION---Don't forget to put quotes around key you are trying to get value for
+console.log(`${tenAlbum['artist']}'s Album ${tenAlbum['title']} was released on ${tenAlbum['released']}`)
+
 
 // Iterating Object keys/values
 // TODO: Iterate the tenAlbum object and log the key/value pairs to the console using a for/in loop
 // example: "title": "Ten"
+
+// "item" is taco representing the key/value, used "in" because this is ONLY used for an object and iterates over property names, "for" loop can be used with arrays,objects, etc and iterates over values. Each time through the loop(iterating over the object) it asks for the key/value pair and logs it.
+for (const item in tenAlbum) {
+    console.log(`${item}: ${tenAlbum[item]}`)
+    // {item} gives the key, {tenAlbum[item]} gives the value
+}
+
+
 
 // Accessing iterable properties on objects
 // TODO: Iterate the tracks array and output the title of each song and its song length using a for loop of your choosing. The output should look something like this:
@@ -71,6 +83,18 @@ const tenAlbum = {
     Title: Even Flow - Length: 293
     etc.
 */
+// using "for..of because tracks is an array of objects"
+    for (const tracksArray of tenAlbum.tracks) {
+        console.log (`Title: ${tracksArray.title} - Length: ${tracksArray.length}`)
+    }
+
+    // using "for..in"
+
+    for (const tracksArray in tenAlbum.tracks) {
+        console.log (`Title:  - Length: `)
+    }
+//  can also use .map method
+
 
 // ! ADD AND COMMIT
 
